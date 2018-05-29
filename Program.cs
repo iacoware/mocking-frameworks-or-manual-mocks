@@ -7,7 +7,8 @@ namespace MockingFrameworkOrManualMocks
     {
         static void Main(string[] args)
         {
-            File.WriteAllLines("customers.txt", new []{"massimo", "matteo"});
+            //File.WriteAllLines("customers.txt", new []{"massimo", "matteo"});
+            File.WriteAllLines("customers.txt", new string[0]);
 
             var superMega = new SuperMegaUseCase(new FlatFileCustomerRepo("customers.txt"), new ConsoleDisplay());
             superMega.DoSomething();
