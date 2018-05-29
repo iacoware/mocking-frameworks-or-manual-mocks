@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleDisplay.cs" />
     <Compile Include="ConsoleDisplayTests.cs" />
     <Compile Include="FlatFileCustomerRepo.cs" />
     <Compile Include="FlatFileCustomerRepoTests.cs" />
