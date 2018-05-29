@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using Xunit;
 
@@ -31,9 +32,7 @@ namespace MockingFrameworkOrManualMocks
             File.WriteAllLines(FileName, new string[0]);
             var customerRepo = new FlatFileCustomerRepo(FileName);
 
-            var all = customerRepo.LoadAll();
-
-            Assert.False(all.Any());
+            Assert.Throws<InvalidOperationException>(() => customerRepo.LoadAll());
         }
     }
 }

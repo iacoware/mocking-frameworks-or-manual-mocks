@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
 
 namespace MockingFrameworkOrManualMocks
 {
@@ -13,7 +15,10 @@ namespace MockingFrameworkOrManualMocks
 
         public string[] LoadAll()
         {
-            return File.ReadAllLines(fileName);
+            var all = File.ReadAllLines(fileName);
+            if (!all.Any()) throw new InvalidOperationException();
+
+            return all;
         }
     }
 }
