@@ -1,26 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace MockingFrameworkOrManualMocks
 {
     public class FlatFileCustomerRepoTests
     {
+        private const string FileName = "customers.txt";
+
+        public FlatFileCustomerRepoTests()
+        {
+            File.Delete(FileName);
+        }
+
         [Fact]
         public void ManyCustomers()
         {
-            File.WriteAllLines("customers.txt", new []{"one", "two"});
-
-            var customerRepo = new FlatFileCustomerRepo("customers.txt");
+            File.WriteAllLines(FileName, new []{"one", "two"});
+            var customerRepo = new FlatFileCustomerRepo(FileName);
 
             var all = customerRepo.LoadAll();
 
             Assert.Contains("one", all);
             Assert.Contains("two", all);
+        }
+
+        [Fact]
+        public void NoCustomers()
+        {
+            File.WriteAllLines(FileName, new string[0]);
+            var customerRepo = new FlatFileCustomerRepo(FileName);
+
+            var all = customerRepo.LoadAll();
+
+            Assert.False(all.Any());
         }
     }
 
