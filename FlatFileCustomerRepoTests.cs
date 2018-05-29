@@ -17,8 +17,7 @@ namespace MockingFrameworkOrManualMocks
         [Fact]
         public void ManyCustomers()
         {
-            File.WriteAllLines(FileName, new []{"one", "two"});
-            var customerRepo = new FlatFileCustomerRepo(FileName);
+            var customerRepo = CreateWith("one", "two");
 
             var all = customerRepo.LoadAll();
 
@@ -29,10 +28,21 @@ namespace MockingFrameworkOrManualMocks
         [Fact]
         public void NoCustomers()
         {
-            File.WriteAllLines(FileName, new string[0]);
-            var customerRepo = new FlatFileCustomerRepo(FileName);
+            var customerRepo = CreateEmpty();
 
             Assert.Throws<InvalidOperationException>(() => customerRepo.LoadAll());
+        }
+
+        private ICustomerRepo CreateWith(params string[] customers)
+        {
+            File.WriteAllLines(FileName, customers);
+            return new FlatFileCustomerRepo(FileName);
+        }
+
+        private ICustomerRepo CreateEmpty()
+        {
+            File.WriteAllLines(FileName, new string[0]);
+            return new FlatFileCustomerRepo(FileName);
         }
     }
 }
