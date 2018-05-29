@@ -70,8 +70,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICustomerRepo.cs" />
+    <Compile Include="IDisplay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuperMegaUseCase.cs" />
     <Compile Include="SuperMegaUseCaseTests.cs" />
   </ItemGroup>
   <ItemGroup>
