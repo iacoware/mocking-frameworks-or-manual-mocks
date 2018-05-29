@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace MockingFrameworkOrManualMocks
 {
@@ -15,9 +16,17 @@ namespace MockingFrameworkOrManualMocks
 
         public void DoSomething()
         {
-            customerRepo.LoadAll()
-                .ToList()
-                .ForEach(name => display.Show(name));
+            try
+            {
+                customerRepo.LoadAll()
+                    .ToList()
+                    .ForEach(name => display.Show(name));
+
+            }
+            catch (InvalidOperationException )
+            {
+                //Do something useful
+            }
         }
     }
 }
