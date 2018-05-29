@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="ConsoleDisplay.cs" />
     <Compile Include="ConsoleDisplayTests.cs" />
+    <Compile Include="CustomerRepoContractTests.cs" />
     <Compile Include="FlatFileCustomerRepo.cs" />
     <Compile Include="FlatFileCustomerRepoTests.cs" />
     <Compile Include="ICustomerRepo.cs" />
