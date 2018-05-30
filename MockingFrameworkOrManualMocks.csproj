@@ -71,17 +71,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleDisplay.cs" />
-    <Compile Include="ConsoleDisplayTests.cs" />
-    <Compile Include="CustomerRepoContractTests.cs" />
+    <Compile Include="Tests\ConsoleDisplayTests.cs" />
+    <Compile Include="Tests\CustomerRepoContractTests.cs" />
     <Compile Include="FlatFileCustomerRepo.cs" />
-    <Compile Include="FlatFileCustomerRepoTests.cs" />
+    <Compile Include="Tests\FlatFileCustomerRepoTests.cs" />
     <Compile Include="ICustomerRepo.cs" />
     <Compile Include="IDisplay.cs" />
-    <Compile Include="InMemoryCustomerRepoTests.cs" />
+    <Compile Include="Tests\InMemoryCustomerRepoTests.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SuperMegaUseCase.cs" />
-    <Compile Include="SuperMegaUseCaseTests.cs" />
+    <Compile Include="Tests\SuperMegaUseCaseTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
