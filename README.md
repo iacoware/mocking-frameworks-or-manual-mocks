@@ -1,4 +1,4 @@
-# Mocking frameworks or manual mocks?
+# Mocking frameworks or manual fakes?
 ### This is the code used during SoCraTes Italy 2018
 
 Take a look at the stream of commits, they should make my point clearer.
@@ -7,12 +7,12 @@ Furthermore, mocking frameworks are a sharp knife and I've seen some horrible us
 
 # These are some of the concerns expressed during the presentation
 Q: But without a mocking framework you can't do outside-in TDD!    
-A: Nope, not related. You can still do outside-in using manual mocks, I do!    
+A: Nope, not related. You can still do outside-in using manual fakes, I do!    
 
-Q: The test using manual mocks is more opaque    
+Q: The test using manual fakes is more opaque    
 A: I respectfully disagree. Tests should not reveal implementation details but express an observable behavior, that's what makes refactoring sustainable    
 
-Q: The tests that reuse a manual mocks are a little more coupled, meaning that if you make a mistake in the "InMemory..." fake implementation a bunch of tests will break    
+Q: The tests that reuse a manual fakes are a little more coupled, meaning that if you make a mistake in the "InMemory..." fake implementation a bunch of tests will break    
 A: Yes, that's true and it's a trade-off I'm willing to accept because it hasn't been a problem so far...    
 
 Do you have a question or observation to make? Post an issue and I'll try to answer    
